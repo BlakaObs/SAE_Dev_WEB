@@ -2,6 +2,7 @@
 
 namespace sae\web\dispatch;
 
+use sae\web\action\AffichageListeAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
 
@@ -17,6 +18,9 @@ class Dispatcher
     public function run(): void
     {
         switch ($this->action) {
+            case "Affichage_liste":
+                $action = new AffichageListeAction();
+                break;
             case "inscription":
                 $action = new AjoutUtilisateurAction();
                 break;
@@ -26,8 +30,9 @@ class Dispatcher
             default:
                 $action = <<<HTML
                     <a href="?action=inscription">Inscription</a><br>
-                    <a href="?action=connexion">ConnexionAction</a><br>
-                    HTML;
+                    <a href="?action=connexion">ConnexionAction</a><br>                    
+                    <a href="?action=Affichage_liste">AffichageListeAction</a><br>
+                HTML;
                 break;
         }
         $this->renderPage($action->execute());
