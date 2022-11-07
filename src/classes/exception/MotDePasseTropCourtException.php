@@ -5,7 +5,7 @@ namespace sae\web\exception;
 use Exception;
 use Throwable;
 
-class MotDePasseException extends Exception
+class MotDePasseTropCourtException extends Exception
 {
     public function __construct($message = "", $code = 0, ?Throwable $previous = null)
     {

@@ -3,31 +3,33 @@
 namespace sae\web\action;
 
 use sae\web\exception\MotDePasseException;
+use sae\web\exception\MotDePasseTropCourtException;
 use sae\web\authentification\Authentification;
 
 class ConnexionAction extends Action
 {
     public function execute(): string
     {
-        $res = "";
-        $authHTML = <<<HTML
+        $html = "";
+        if ($_SERVER['REQUEST_METHOD'] === "GET") {
+            $html .= <<<HTML
             <form action="?action=${_GET['action']}" method="post">
-                <label>Email: </label><input type="text" name="email" placeholder="toto@gmail.com" required>
-                <label>Password: </label><input type="password" name="password" required>
-                <button type="submit">Validate</button>
+                <label>Email: </label><input type="text" name="email" placeholder="mail@mail.com" required>
+                <label>Mot de passe: </label><input type="password" name="password" required>
+                <button type="submit">Valider</button>
             </form>
         HTML;
-        if ($_SERVER['REQUEST_METHOD'] === "GET") echo $authHTML;
-        else {
+        } else {
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
             $passwd = filter_var($_POST['password']);
-            try {
-                Authentification::authenticate($email,$passwd);
-            }catch (MotDePasseException $e){
-                return "Mot de passe ou email erroné.</br><a href='index.php'>Retour a l'accueil</a>";
+            $bool = Authentification::authenticate($email, $passwd);
+            if ($bool) {
+                $html .= "<p>Connexion réussie</p>";
+            } else {
+                $html .= "<p>Erreur lors de la connexion</p>";
             }
-            $res = "Connection réussite.</br><a href='index.php'>Retour a l'accueil</a>";
+            $html .= "<a href='index.php'>Retour a l'accueil</a>";
         }
-        return $res;
+        return $html;
     }
 }
