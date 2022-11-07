@@ -8,6 +8,8 @@ use sae\web\authentification\Authentification;
 
 class ConnexionAction extends Action
 {
+    /**
+     */
     public function execute(): string
     {
         $html = "";
@@ -22,13 +24,14 @@ class ConnexionAction extends Action
         } else {
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
             $passwd = filter_var($_POST['password']);
-            $bool = Authentification::authenticate($email, $passwd);
-            if ($bool) {
+            try {
+                Authentification::authenticate($email, $passwd);
                 $html .= "<p>Connexion réussie</p>";
-            } else {
-                $html .= "<p>Erreur lors de la connexion</p>";
+                $html .= "<a href='index.php'>Retour a l'accueil</a>";
+            }catch (MotDePasseException $e){
+                $html .= "<p>Le mot de passe est incorrect.</p>";
+                echo "<br><a href='index.php'>Retour</a>";
             }
-            $html .= "<a href='index.php'>Retour a l'accueil</a>";
         }
         return $html;
     }

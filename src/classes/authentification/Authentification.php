@@ -35,6 +35,9 @@ class Authentification
         return true;
     }
 
+    /**
+     * @throws MotDePasseException
+     */
     public static function authenticate(string $email, string $mdp): bool
     {
         $bd = ConnectionFactory::makeConnection();
@@ -43,7 +46,7 @@ class Authentification
         $query->execute();
         $data = $query->fetch(PDO::FETCH_ASSOC);
         $mdpCourant = $data['password'];
-        if (!password_verify($mdp, $mdpCourant)) return false;
+        if (!password_verify($mdp, $mdpCourant)) throw new MotDePasseException();
         return true;
     }
 }
