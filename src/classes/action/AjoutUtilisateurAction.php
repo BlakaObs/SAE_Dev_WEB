@@ -2,7 +2,7 @@
 
 namespace sae\web\action;
 
-class AjoutUtilisateur extends Action
+class AjoutUtilisateurAction extends Action
 {
     public function execute(): string
     {

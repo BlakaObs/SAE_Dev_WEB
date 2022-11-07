@@ -2,8 +2,8 @@
 
 namespace sae\web\dispatch;
 
-use sae\web\action\AjoutUtilisateur;
-use sae\web\action\Connexion;
+use sae\web\action\AjoutUtilisateurAction;
+use sae\web\action\ConnexionAction;
 
 class Dispatcher
 {
@@ -18,15 +18,15 @@ class Dispatcher
     {
         switch ($this->action) {
             case "inscription":
-                $action = new AjoutUtilisateur();
+                $action = new AjoutUtilisateurAction();
                 break;
             case "connexion":
-                $action = new Connexion();
+                $action = new ConnexionAction();
                 break;
             default:
                 $action = <<<HTML
                     <a href="?action=inscription">Inscription</a><br>
-                    <a href="?action=connexion">Connexion</a><br>
+                    <a href="?action=connexion">ConnexionAction</a><br>
                     HTML;
                 break;
         }
