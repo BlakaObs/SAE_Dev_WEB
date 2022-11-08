@@ -30,7 +30,7 @@ class ConnexionAction extends Action
                 $html .= "<a href='index.php'>Retour a l'accueil</a>";
             }catch (MotDePasseException $e){
                 $html .= "<p>Le mot de passe est incorrect.</p>";
-                echo "<br><a href='index.php'>Retour</a>";
+                $html .= "<br><a href='index.php'>Retour</a>";
             }
         }
         return $html;

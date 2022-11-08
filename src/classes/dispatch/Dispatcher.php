@@ -3,6 +3,7 @@
 namespace sae\web\dispatch;
 
 use sae\web\action\AffichageListeAction;
+use sae\web\action\AfficherDetailSerieAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
 
@@ -18,7 +19,7 @@ class Dispatcher
     public function run(): void
     {
         switch ($this->action) {
-            case "Affichage_liste":
+            case "affichageListe":
                 $action = new AffichageListeAction();
                 break;
             case "inscription":
@@ -27,11 +28,14 @@ class Dispatcher
             case "connexion":
                 $action = new ConnexionAction();
                 break;
+            case "afficherDetailSerie":
+                $action = new AfficherDetailSerieAction();
+                break;
             default:
                 $action = <<<HTML
                     <a href="?action=inscription">Inscription</a><br>
                     <a href="?action=connexion">ConnexionAction</a><br>                    
-                    <a href="?action=Affichage_liste">AffichageListeAction</a><br>
+                    <a href="?action=affichageListe">AffichageListeAction</a><br>
                 HTML;
                 break;
         }

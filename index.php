@@ -16,7 +16,7 @@ if (isset($_GET['action'])) {
     $action = <<< HTML
         <a href="?action=inscription">Inscription</a><br>
         <a href="?action=connexion">Connexion</a><br>
-        <a href="?action=Affichage_liste">AffichageListeAction</a><br>
+        <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
         HTML;
     echo $action;
 }
