@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout d'une session pour un utilisateur">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/action/SuprPreferencesAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

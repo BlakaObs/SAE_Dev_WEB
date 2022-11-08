@@ -35,11 +35,27 @@ class AfficherDetailSerieAction extends Action
             $html .= "</ul>";
         }
 
-        $html .= <<<form
-            <form action="?action=ajoutPreferences&id=${_GET['id']}" method="post">
-                <button type='submit'>Ajouter à mes préférences</button><br>
-            </form>
-        form;
+        $queryPref = $bd->prepare("SELECT pref FROM seriePref WHERE email = ? AND serie_id = ?");
+        $email = $_SESSION['user'];
+        $queryPref->bindParam(1, $email);
+        $queryPref->bindParam(2, $_GET['id']);
+        $queryPref->execute();
+
+        $data = $queryPref->fetch();
+
+        if ($data == 0) {
+            $html .= <<<form
+                <form action="?action=ajoutPreferences&id=${_GET['id']}" method="post">
+                    <button type='submit'>Ajouter à mes préférences</button><br>
+                </form>
+            form;
+        }else{
+            $html .= <<<form
+                <form action="?action=suprPreferences&id=${_GET['id']}" method="post">
+                    <button type='submit'>Retirer de mes préférences</button><br>
+                </form>
+            form;
+        }
 
         $html .= "<a href='index.php'>Retour à l'accueil</a>";
 

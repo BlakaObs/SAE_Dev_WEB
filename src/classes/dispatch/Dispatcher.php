@@ -8,6 +8,7 @@ use sae\web\action\AfficherDetailSerieAction;
 use sae\web\action\AjoutPreferencesAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
+use sae\web\action\SuprPreferencesAction;
 
 class Dispatcher
 {
@@ -38,6 +39,9 @@ class Dispatcher
                 break;
             case "ajoutPreferences":
                 $action = new AjoutPreferencesAction();
+                break;
+            case "suprPreferences":
+                $action = new SuprPreferencesAction();
                 break;
             default:
                 $action = <<<HTML
