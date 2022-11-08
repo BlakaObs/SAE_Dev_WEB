@@ -32,8 +32,17 @@ class AfficherDetailSerieAction extends Action
                     "<br> <a href='?action=afficherDetailEpisode&id=$id'>Titre : " . $data['titre'] . "</a>" .
                     "<br> Durée : " . $data['duree'] . "</li><br>";
             }
+            $html .= "</ul>";
         }
+
+        $html .= <<<form
+            <form action="?action=ajoutPreferences" method="post">
+                <button type='submit'>Ajouter à mes préférences</button><br>
+            </form>
+        form;
+
         $html .= "<a href='index.php'>Retour à l'accueil</a>";
+
         return $html;
     }
 }

@@ -18,7 +18,6 @@ class AffichageListeAction extends Action
             $id = $data['id'];
             $html .= "<li><a href='?action=afficherDetailSerie&id=$id'>Titre : " . $data['titre'] . "</a><br><img src='src/ressources/images/" . $data['img']
                 . "' alt='Image correspondant à la série '></li><br>";
-            var_dump($data['img']);
         }
         $html .= "</ul>";
         $html .= "<a href='index.php'>Retour à l'accueil</a>";

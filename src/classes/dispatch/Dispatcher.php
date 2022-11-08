@@ -5,6 +5,7 @@ namespace sae\web\dispatch;
 use sae\web\action\AffichageListeAction;
 use sae\web\action\AfficherDetailEpisodeAction;
 use sae\web\action\AfficherDetailSerieAction;
+use sae\web\action\AjoutPreferencesAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
 
@@ -34,6 +35,9 @@ class Dispatcher
                 break;
             case "afficherDetailEpisode":
                 $action = new AfficherDetailEpisodeAction();
+                break;
+            case "ajoutPreferences":
+                $action = new AjoutPreferencesAction();
                 break;
             default:
                 $action = <<<HTML
