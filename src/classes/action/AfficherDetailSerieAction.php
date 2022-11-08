@@ -12,7 +12,7 @@ class AfficherDetailSerieAction extends Action
         $bd = ConnectionFactory::makeConnection();
         $querySerie = $bd->prepare("SELECT titre, descriptif, annee, date_ajout FROM serie WHERE id = ?");
         $queryNbEpisodes = $bd->prepare("SELECT COUNT(*) FROM episode WHERE serie_id = ?");
-        $queryEpisode = $bd->prepare("SELECT numero, titre, duree FROM episode WHERE serie_id = ?");
+        $queryEpisode = $bd->prepare("SELECT id,numero, titre, duree FROM episode WHERE serie_id = ?");
         $querySerie->execute([$_GET['id']]);
         $queryEpisode->execute([$_GET['id']]);
         $queryNbEpisodes->execute([$_GET['id']]);
@@ -27,8 +27,9 @@ class AfficherDetailSerieAction extends Action
             $queryEpisode->execute([$_GET['id']]);
             $html .= "<ul>";
             while ($data = $queryEpisode->fetch()) {
+                $id=$data['id'];
                 $html .= "<li>Numéro : " . $data['numero'] .
-                    "<br> Titre : " . $data['titre'] .
+                    "<br> <a href='?action=afficherDetailEpisode&id=$id'>Titre : " . $data['titre'] . "</a>" .
                     "<br> Durée : " . $data['duree'] . "</li><br>";
             }
         }

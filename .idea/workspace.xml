@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="">
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Reglages image">
+      <change afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/db.conf.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ressources/images/Cheveaux.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667837370644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Reglages image">
+      <created>1667896650862</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667896650862</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Création de la classe ConnexionAction et des classe autour" />
     <MESSAGE value="Début question 3 à réparer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début question 3 à réparer" />
+    <MESSAGE value="Reglages image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reglages image" />
   </component>
 </project>
