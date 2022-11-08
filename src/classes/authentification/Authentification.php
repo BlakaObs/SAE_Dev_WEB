@@ -33,6 +33,14 @@ class Authentification
         $query->bindParam(1, $email);
         $query->bindParam(2, $hash);
         $query->execute();
+        $query2 = $bd->prepare("INSERT INTO seriePref (email, serie_id) VALUES(?, ?)");
+        $query3 = $bd->prepare("SELECT id FROM serie");
+        $query3->execute();
+        $query2->bindParam(1, $email);
+        while ($data = $query3->fetch()){
+            $query2->bindParam(2, $data['id']);
+            $query2->execute();
+        }
         return true;
     }
 

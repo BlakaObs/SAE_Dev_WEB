@@ -36,7 +36,7 @@ class AfficherDetailSerieAction extends Action
         }
 
         $html .= <<<form
-            <form action="?action=ajoutPreferences" method="post">
+            <form action="?action=ajoutPreferences&id=${_GET['id']}" method="post">
                 <button type='submit'>Ajouter à mes préférences</button><br>
             </form>
         form;

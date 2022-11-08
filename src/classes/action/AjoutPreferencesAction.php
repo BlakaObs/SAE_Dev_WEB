@@ -11,9 +11,13 @@ class AjoutPreferencesAction extends Action
     {
         $html = "";
         $bd = ConnectionFactory::makeConnection();
-        //$query = $bd->prepare("UPDATE  FROM Utilisateur");
-        //$query->execute();
-        $html .= "Ajout de la série à vos préférences éffectuer <br>";
+        $query = $bd->prepare("UPDATE seriePref SET pref = 1 WHERE email = ? AND serie_id = ? ");
+        $email = $_SESSION['user'];
+        $query->bindParam(1, $email);
+        $query->bindParam(2, $_GET['id']);
+
+        $query->execute();
+        $html .= "Ajout de la série à vos préférences effectué <br>";
         $html .= "<a href='index.php'>Retour à l'accueil</a>";
 
         return $html;
