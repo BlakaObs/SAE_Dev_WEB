@@ -4,7 +4,7 @@ namespace sae\web\action;
 
 use sae\web\factory\ConnectionFactory;
 
-class SuprPreferencesAction extends Action
+class SupprPreferencesAction extends Action
 {
 
     public function execute(): string

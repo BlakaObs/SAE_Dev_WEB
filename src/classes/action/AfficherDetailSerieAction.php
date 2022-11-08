@@ -43,7 +43,7 @@ class AfficherDetailSerieAction extends Action
 
         $data = $queryPref->fetch();
 
-        if ($data == 0) {
+        if ($data['pref'] == 0) {
             $html .= <<<form
                 <form action="?action=ajoutPreferences&id=${_GET['id']}" method="post">
                     <button type='submit'>Ajouter à mes préférences</button><br>
