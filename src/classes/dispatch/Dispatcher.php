@@ -8,6 +8,7 @@ use sae\web\action\AfficherDetailSerieAction;
 use sae\web\action\AjoutPreferencesAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
+use sae\web\action\DeconnexionAction;
 use sae\web\action\SupprPreferencesAction;
 
 class Dispatcher
@@ -42,6 +43,9 @@ class Dispatcher
                 break;
             case "suprPreferences":
                 $action = new SupprPreferencesAction();
+                break;
+            case "deconnexion":
+                $action = new DeconnexionAction();
                 break;
             default:
                 $action = <<<HTML
