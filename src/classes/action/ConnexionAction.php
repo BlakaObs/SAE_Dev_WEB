@@ -28,8 +28,13 @@ class ConnexionAction extends Action
                 Authentification::authenticate($email, $passwd);
                 $html .= "<p>Connexion réussie</p>";
                 $html .= "<a href='index.php'>Retour a l'accueil</a>";
+                $_SESSION['user']=$email;
             }catch (MotDePasseException $e){
                 $html .= "<p>Le mot de passe est incorrect.</p>";
+                $html .= "<br><a href='index.php'>Retour</a>";
+
+            }catch (\Exception $e){
+                $html .= "<p>Le compte n'existe pas .</p>";
                 $html .= "<br><a href='index.php'>Retour</a>";
             }
         }

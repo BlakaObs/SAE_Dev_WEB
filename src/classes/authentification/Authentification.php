@@ -2,6 +2,7 @@
 
 namespace sae\web\authentification;
 
+use http\Exception;
 use PDO;
 use sae\web\exception\EmailDejaExistantException;
 use sae\web\exception\MotDePasseException;
@@ -37,6 +38,7 @@ class Authentification
 
     /**
      * @throws MotDePasseException
+     * @throws \Exception
      */
     public static function authenticate(string $email, string $mdp): bool
     {
@@ -45,7 +47,11 @@ class Authentification
         $query->bindParam(1, $email);
         $query->execute();
         $data = $query->fetch(PDO::FETCH_ASSOC);
-        $mdpCourant = $data['password'];
+        if ($query->rowCount() == 0) {
+            throw new \Exception();
+        } else {
+            $mdpCourant = $data['password'];
+        }
         if (!password_verify($mdp, $mdpCourant)) throw new MotDePasseException();
         return true;
     }
