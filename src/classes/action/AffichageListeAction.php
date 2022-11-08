@@ -11,11 +11,12 @@ class AffichageListeAction extends Action
     {
         $html = "";
         $bd = ConnectionFactory::makeConnection();
-        $query = $bd->prepare("select titre,img from serie");
+        $query = $bd->prepare("SELECT titre,img FROM serie");
         $query->execute();
         $html .= "<ul>";
-        foreach ($query->fetch() as $res){
-            $html .= "<li> Titre : " . $res['titre'] . "<img src='img/" . $res['img'] . "' alt='Image correspondant à : " . $res['titre'] . "'></li>";
+        while($data = $query->fetch()){
+            $html .= "<li> Titre : " . $data['titre'] . "<br><img src='img/" . $data['img']
+                . "' alt='Image correspondant à la série '></li><br>";
         }
         $html .= "</ul>";
         return $html;
