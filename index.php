@@ -20,7 +20,6 @@ if (isset($_GET['action'])) {
 
     if(isset($_SESSION['user'])){
     $action = <<< HTML
-        <a href="?action=inscription">Inscription</a><br>
         <a href="?action=connexion">Connexion</a><br>
         <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
         HTML;
