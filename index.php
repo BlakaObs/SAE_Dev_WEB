@@ -20,29 +20,49 @@ if (isset($_GET['action'])) {
 
     if (isset($_SESSION['user'])) {
         $bd = ConnectionFactory::makeConnection();
-        $query = $bd->prepare("SELECT titre FROM serie INNER JOIN seriePref ON serie.id=seriePref.serie_id WHERE email = ? AND pref = 1");
+        $queryPref = $bd->prepare("SELECT titre, id FROM serie INNER JOIN seriePref ON serie.id=seriePref.serie_id WHERE email = ? AND pref = 1");
+        $queryEnCours = $bd->prepare("SELECT titre, id FROM serie INNER JOIN seriePref ON serie.id=seriePref.serie_id WHERE email = ? AND enCours = 1");
         $email = $_SESSION['user'];
-        $query->bindParam(1, $email);
-        $query->execute();
+        $queryPref->bindParam(1, $email);
+        $queryPref->execute();
+        $queryEnCours->bindParam(1, $email);
+        $queryEnCours->execute();
 
         $action = <<< HTML
         <p>Connecté en tant que : {$_SESSION['user']}</p> 
         <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
         HTML;
-        if ($query->rowCount() == 0) {
+        if ($queryPref->rowCount() == 0) {
             $action .= "<br>Aucune série préférée 😢<br>";
         } else {
             $action .= "<br>Mes séries préférées !<ul>";
 
-            while ($data = $query->fetch()) {
-                $action .= "<li> {$data['titre']}</li>";
+            while ($data = $queryPref->fetch()) {
+                $action .= "<li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
             }
 
             $action .= <<<HTML
         </ul>
         HTML;
         }
+
+        if ($queryEnCours->rowCount() > 0) {
+            $action .= <<<HTML
+        <a>Mes séries en cours !
+        <ul>
+        HTML;
+
+            $queryEnCours->execute();
+            while ($data = $queryEnCours->fetch()) {
+
+                $action .= "<li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
+            }
+            $action .= <<<HTML
+        </ul></a>
+        HTML;
+        }
         $action .= '<a href="?action=deconnexion">Se déconnecter</a>';
+
     }
     echo $action;
 }

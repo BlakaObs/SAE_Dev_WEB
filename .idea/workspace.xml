@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Correction pour supprimer et ajouter aux préférences">
-      <change afterPath="$PROJECT_DIR$/src/classes/action/DeconnexionAction.php" afterDir="false" />
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667913692786</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide">
+      <created>1667915274736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667915274736</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +122,7 @@
     <MESSAGE value="Ajout de la fonctionnalite numero 4" />
     <MESSAGE value="Ajout de la fonctionnalite numero 5" />
     <MESSAGE value="Correction pour supprimer et ajouter aux préférences" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction pour supprimer et ajouter aux préférences" />
+    <MESSAGE value="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide" />
   </component>
 </project>
