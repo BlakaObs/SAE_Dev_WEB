@@ -1,13 +1,11 @@
 <?php
-require_once 'src/classes/loader/Psr4ClassLoader.php';
+require_once("vendor/autoload.php");
 
 use sae\web\dispatch\Dispatcher;
 use sae\web\factory\ConnectionFactory;
 use sae\web\loader\Psr4ClassLoader;
 
 session_start();
-$loader = new Psr4ClassLoader('sae\\web\\', 'src/classes/');
-$loader->register();
 ConnectionFactory::setConfig("db.conf.ini");
 if (isset($_GET['action'])) {
     $dispatcher = new Dispatcher($_GET['action']);

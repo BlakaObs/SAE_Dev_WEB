@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de la fonctionnalité 9 : manque de la vérification de doublons.">
-      <change afterPath="$PROJECT_DIR$/accueil.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/action/AfficherCommentaireAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/exception/CommentaireExistantException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" afterDir="false" />
-    </list>
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de la fonctionnalité 10 et finition de la fonction 9." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +55,7 @@
       <workItem from="1667976643430" duration="7000" />
       <workItem from="1667976853676" duration="2758000" />
       <workItem from="1667985231860" duration="5065000" />
-      <workItem from="1667998406139" duration="3629000" />
+      <workItem from="1667998406139" duration="4191000" />
     </task>
     <task id="LOCAL-00001" summary="Création de la classe ConnexionAction et des classe autour">
       <created>1667831242116</created>
@@ -131,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667990206218</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ajout de la fonctionnalité 10 et finition de la fonction 9.">
+      <created>1668002373222</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668002373222</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +155,7 @@
     <MESSAGE value="Ajout de la fonctionnalité 8 : Liste des séries en cours." />
     <MESSAGE value="Ajout de css pour mettre en valeur notre site" />
     <MESSAGE value="Ajout de la fonctionnalité 9 : manque de la vérification de doublons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité 9 : manque de la vérification de doublons." />
+    <MESSAGE value="Ajout de la fonctionnalité 10 et finition de la fonction 9." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité 10 et finition de la fonction 9." />
   </component>
 </project>
