@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout d'un composer">
-      <change afterPath="$PROJECT_DIR$/src/classes/exception/UtilisateurInexistantException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Correction de problèmes de sécurité (on ne peut plus accéder à un épisode si non-connecté)">
+      <change beforePath="$PROJECT_DIR$/src/classes/action/Action.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/Action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/ActivationAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ActivationAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherCommentaireAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherCommentaireAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutPreferencesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutPreferencesAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/DeconnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/DeconnexionAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/SupprPreferencesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/SupprPreferencesAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/authentification/Authentification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/authentification/Authentification.php" afterDir="false" />
     </list>
@@ -76,7 +79,7 @@
       <workItem from="1667976643430" duration="7000" />
       <workItem from="1667976853676" duration="2758000" />
       <workItem from="1667985231860" duration="5065000" />
-      <workItem from="1667998406139" duration="6059000" />
+      <workItem from="1667998406139" duration="7505000" />
     </task>
     <task id="LOCAL-00001" summary="Création de la classe ConnexionAction et des classe autour">
       <created>1667831242116</created>
@@ -155,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668002928491</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Correction de problèmes de sécurité (on ne peut plus accéder à un épisode si non-connecté)">
+      <created>1668004605575</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668004605575</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +196,7 @@
     <MESSAGE value="Ajout de la fonctionnalité 9 : manque de la vérification de doublons." />
     <MESSAGE value="Ajout de la fonctionnalité 10 et finition de la fonction 9." />
     <MESSAGE value="Ajout d'un composer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un composer" />
+    <MESSAGE value="Correction de problèmes de sécurité (on ne peut plus accéder à un épisode si non-connecté)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de problèmes de sécurité (on ne peut plus accéder à un épisode si non-connecté)" />
   </component>
 </project>

@@ -4,7 +4,6 @@ namespace sae\web\action;
 
 abstract class Action
 {
-
     protected ?string $http_method = null;
     protected ?string $hostname = null;
     protected ?string $script_name = null;

@@ -13,8 +13,8 @@ class AjoutUtilisateurAction extends Action
         $html = "";
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
+            // formulaire de création de compte
             $html .= <<<HTML
-            
             <html>
                 <body>
                     <div id="container">
@@ -38,9 +38,10 @@ class AjoutUtilisateurAction extends Action
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
             $passwd = filter_var($_POST['password']);
             $passwdCheck = filter_var($_POST['passwordCheck']);
+
+            // vérification des MDP
             if ($passwd != $passwdCheck) {
                 $html .= <<<HTML
-
                 <html>                       
                     <h1>      
                         <p>Les mots de passes ne sont pas identiques</p>
@@ -55,33 +56,30 @@ class AjoutUtilisateurAction extends Action
                         $html .= "<p>Veuillez valider votre compte</p>";
                         $token = uniqid();
                         $_SESSION['token'] = $token;
-                        $expire = time()+60;
-                        $html .= "<br><a href=". "?action=activation&token=$token&email=$email&expire=$expire". ">Activation</a>";
+                        $expire = time() + 60;
+                        $html .= "<br><a href=" . "?action=activation&token=$token&email=$email&expire=$expire" . ">Activation</a>";
                     } else $html .= "<p>L'email existe déjà</p>";
                     $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
                 } catch (EmailDejaExistantException $e) {
                     $html .= <<<HTML
-
-                <html>                       
-                    <h1>      
-                        <p>L'email est déjà enregistré</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>L'email est déjà enregistré</p>
+                        </h1> 
+                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                    </html>
+                    <link rel="stylesheet" href="connexion.css" type="text/css" />
+                    HTML;
                 } catch (MotDePasseTropCourtException $e) {
-
                     $html .= <<<HTML
-
-                <html>                       
-                    <h1>      
-                        <p>Votre mot de passe est trop court</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>Votre mot de passe est trop court</p>
+                        </h1> 
+                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                    </html>
+                    <link rel="stylesheet" href="connexion.css" type="text/css" />
+                    HTML;
                 }
             }
         }

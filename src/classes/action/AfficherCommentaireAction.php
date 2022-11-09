@@ -10,11 +10,18 @@ class AfficherCommentaireAction extends Action
     public function execute(): string
     {
         $html = "";
+
+        // vérification qu'un utilisateur est connecté
         if (isset($_SESSION['user'])) {
+
+            //connexion à la BDD
+            // requête pour sélectionner les commentaires d'une série
             $bd = ConnectionFactory::makeConnection();
             $query = $bd->prepare("SELECT email, contenu, note FROM Commentaire WHERE serie_id = {$_GET['id']}");
             $query->execute();
             $html .= "<ul>";
+
+            // affichage des commentaires
             while ($data = $query->fetch()) {
                 $user = $data['email'];
                 $note = $data['note'];

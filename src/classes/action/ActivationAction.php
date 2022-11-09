@@ -6,10 +6,11 @@ use sae\web\authentification\Authentification;
 
 class ActivationAction extends Action
 {
-
     public function execute(): string
     {
         $html = "";
+
+        // vérification de la durée d'expiration
         if ($_GET['expire'] > time()) {
             if ($_GET['token'] == $_SESSION['token']) {
                 if (Authentification::validation($_GET['email'])) {
@@ -21,7 +22,7 @@ class ActivationAction extends Action
                 $html .= "<p>Erreur durant la validation</p>";
                 $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
             }
-        }else{
+        } else {
             Authentification::suppression($_GET['email']);
             $html .= "<p>Erreur durant la validation, trop de temps pris.</p>";
             $html .= "<br><a href='index.php'>Retour à l'accueil</a>";

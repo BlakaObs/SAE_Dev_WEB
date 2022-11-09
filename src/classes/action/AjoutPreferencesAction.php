@@ -10,7 +10,11 @@ class AjoutPreferencesAction extends Action
     public function execute(): string
     {
         $html = "";
+
+        // connexion à la BDD
         $bd = ConnectionFactory::makeConnection();
+
+        // requête pour mettre à jour les favoris
         $query = $bd->prepare("UPDATE seriePref SET pref = 1 WHERE email = ? AND serie_id = ? ");
         $email = $_SESSION['user'];
         $query->bindParam(1, $email);
