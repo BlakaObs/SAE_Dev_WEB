@@ -1,0 +1,89 @@
+body {
+    background-color: darkslategrey;
+}
+
+
+#container{
+    width:500px;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #ffff
+}
+#container h1{
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+
+}
+input[type=submit] {
+    background-color: mediumseagreen;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: black;
+
+}
+header{
+
+
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+
+
+}
+h1 {
+    padding-bottom: 200px;
+    text-align: center;
+}
+
+a{
+    margin-left: 25%;
+    background-color: #00987e;
+    border-top-width: 100px;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    border: 3px solid black;
+}
+
+ok{
+    margin-left: 18%;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+plan{
+    background: linear-gradient(#3cb371,#00a678,#00987e,#008a81,#007c82,#006d7f);
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+

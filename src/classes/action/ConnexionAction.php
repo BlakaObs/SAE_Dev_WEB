@@ -15,19 +15,38 @@ class ConnexionAction extends Action
         $html = "";
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
             $html .= <<<HTML
-            <form action="?action=${_GET['action']}" method="post">
-                <label>Email: </label><input type="text" name="email" placeholder="mail@mail.com" required>
-                <label>Mot de passe: </label><input type="password" name="password" required>
-                <button type="submit">Valider</button>
-            </form>
+        <html>
+            <body>
+                <div id="container">
+                    <form action="?action=${_GET['action']}" method="post">
+                        <h1>Connexion</h1>
+                            <label><b>Email</b></label>
+                                <input type="text" name="email" placeholder="mail@mail.com" required>
+                            <label><b>Mot de passe</b></label>
+                                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                                <input type="submit" id='submit' value='Se connecter' >
+                    </form>
+                </div>
+            </body>
+        </html>
+        <link rel="stylesheet" href="connexion.css" type="text/css" />
+
         HTML;
         } else {
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
             $passwd = filter_var($_POST['password']);
             try {
                 Authentification::authenticate($email, $passwd);
-                $html .= "<p>Connexion réussie</p>";
-                $html .= "<a href='index.php'>Retour a l'accueil</a>";
+                $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>Connexion réussie</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
                 $_SESSION['user']=$email;
             }catch (MotDePasseException $e){
                 $html .= "<p>Le mot de passe est incorrect.</p>";

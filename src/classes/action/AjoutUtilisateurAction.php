@@ -14,11 +14,24 @@ class AjoutUtilisateurAction extends Action
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
             $html .= <<<HTML
-            <form action="?action=${_GET['action']}" method="post">
-                <label>Email: </label><input type="text" name="email" placeholder="mail@mail.com" required><br>
-                <label>Mot de passe: </label><input type="password" name="password" required><br>
-                 <label>Confirmer votre mot de passe: </label><input type="password" name="passwordCheck" required>     <br>       
-                <button type="submit">Confirmer</button>
+            
+            <html>
+                <body>
+                    <div id="container">
+                        <form action="?action=${_GET['action']}" method="post">
+                            <h1>Inscription</h1>
+                            <label><b>Email</b></label>
+                                <input type="text" name="email" placeholder="mail@mail.com" required>
+                            <label><b>Mot de passe</b></label>
+                                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                            <label><b>Confirmation du mot de passe</b></label>
+                                <input type="password" placeholder="Confirmer le mot de passe" name="passwordCheck" required>
+                                <input type="submit" id='submit' value="S'inscire" >
+                        </form>
+                    </div>
+                </body>
+            </html>
+            <link rel="stylesheet" href="connexion.css" type="text/css" />
             </form>
             HTML;
         } else {

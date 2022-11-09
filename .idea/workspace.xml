@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide">
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de la fonctionnalité 8 : Liste des séries en cours.">
+      <change afterPath="$PROJECT_DIR$/connexion.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,20 +32,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brena/Documents/Cours/S3/SAE/SAE_Dev_WEB&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "W:/Developpement Web/SAE_Dev_WEB",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +57,10 @@
       <workItem from="1667829217883" duration="1713000" />
       <workItem from="1667830963399" duration="4557000" />
       <workItem from="1667891846738" duration="1154000" />
+      <workItem from="1667976549085" duration="43000" />
+      <workItem from="1667976643430" duration="7000" />
+      <workItem from="1667976853676" duration="2758000" />
+      <workItem from="1667985231860" duration="2053000" />
     </task>
     <task id="LOCAL-00001" summary="Création de la classe ConnexionAction et des classe autour">
       <created>1667831242116</created>
@@ -98,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667915274736</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ajout de la fonctionnalité 8 : Liste des séries en cours.">
+      <created>1667920062560</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667920062560</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +136,7 @@
     <MESSAGE value="Ajout de la fonctionnalite numero 5" />
     <MESSAGE value="Correction pour supprimer et ajouter aux préférences" />
     <MESSAGE value="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide" />
+    <MESSAGE value="Ajout de la fonctionnalité 8 : Liste des séries en cours." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité 8 : Liste des séries en cours." />
   </component>
 </project>

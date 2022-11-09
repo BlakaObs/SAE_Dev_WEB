@@ -14,8 +14,17 @@ if (isset($_GET['action'])) {
     $dispatcher->run();
 } else {
     $action = <<< HTML
-        <a href="?action=inscription">Inscription</a><br>
-        <a href="?action=connexion">Connexion</a><br>
+        <html>
+        <plan>
+            <header>
+                <h1>Bienvenue sur NetVOD</h1>
+            </header>
+              <body>           
+                        <a style="display: inline" href="?action=connexion">Connexion</a> <a style="display: inline" <a href="?action=inscription">Inscription  </a>            
+              </body>
+        <link rel="stylesheet" href="connexion.css" type="text/css" />
+        </plan>
+        </html>
         HTML;
 
     if (isset($_SESSION['user'])) {
