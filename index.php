@@ -55,9 +55,9 @@ if (isset($_GET['action'])) {
             while ($data = $queryPref->fetch()) {
                 $action .= "<li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
                 $action .= <<< HTML
+               
             HTML;
             }
-
             $action .= <<<HTML
         </ul>
         HTML;
