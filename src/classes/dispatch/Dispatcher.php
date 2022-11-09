@@ -5,6 +5,7 @@ namespace sae\web\dispatch;
 use sae\web\action\AffichageListeAction;
 use sae\web\action\AfficherDetailEpisodeAction;
 use sae\web\action\AfficherDetailSerieAction;
+use sae\web\action\AjoutNoteComAction;
 use sae\web\action\AjoutPreferencesAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
@@ -46,6 +47,9 @@ class Dispatcher
                 break;
             case "deconnexion":
                 $action = new DeconnexionAction();
+                break;
+            case "ajoutNoteCom":
+                $action = new AjoutNoteComAction();
                 break;
             default:
                 $action = <<<HTML

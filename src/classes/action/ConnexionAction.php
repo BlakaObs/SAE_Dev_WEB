@@ -18,7 +18,7 @@ class ConnexionAction extends Action
         <html>
             <body>
                 <div id="container">
-                    <form action="?action=${_GET['action']}" method="post">
+                    <form action="?action={$_GET['action']}" method="post">
                         <h1>Connexion</h1>
                             <label><b>Email</b></label>
                                 <input type="text" name="email" placeholder="mail@mail.com" required>

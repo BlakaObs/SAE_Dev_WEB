@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de la fonctionnalité 8 : Liste des séries en cours.">
-      <change afterPath="$PROJECT_DIR$/connexion.css" afterDir="false" />
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de css pour mettre en valeur notre site">
+      <change afterPath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/dispatch/Dispatcher.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
       <workItem from="1667976549085" duration="43000" />
       <workItem from="1667976643430" duration="7000" />
       <workItem from="1667976853676" duration="2758000" />
-      <workItem from="1667985231860" duration="2053000" />
+      <workItem from="1667985231860" duration="4927000" />
     </task>
     <task id="LOCAL-00001" summary="Création de la classe ConnexionAction et des classe autour">
       <created>1667831242116</created>
@@ -111,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667920062560</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajout de css pour mettre en valeur notre site">
+      <created>1667987326444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667987326444</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +144,7 @@
     <MESSAGE value="Correction pour supprimer et ajouter aux préférences" />
     <MESSAGE value="Ajout de la fonctionnalité 7 : Liste des séries préférées sur l'écran d'accueil + liste vide" />
     <MESSAGE value="Ajout de la fonctionnalité 8 : Liste des séries en cours." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité 8 : Liste des séries en cours." />
+    <MESSAGE value="Ajout de css pour mettre en valeur notre site" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de css pour mettre en valeur notre site" />
   </component>
 </project>
