@@ -2,6 +2,7 @@
 
 namespace sae\web\authentification;
 
+use sae\web\exception\ValiderException;
 use http\Exception;
 use PDO;
 use sae\web\exception\EmailDejaExistantException;
@@ -61,6 +62,24 @@ class Authentification
             $mdpCourant = $data['password'];
         }
         if (!password_verify($mdp, $mdpCourant)) throw new MotDePasseException();
+        if ($data['valid'] == 0) throw new ValiderException("Compte non valide");
         return true;
+    }
+
+    public static function validation(string $email):bool
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $query = $bd->prepare("UPDATE Utilisateur SET valid = 1 where email = ? ");
+        $query->bindParam(1, $email);
+        $query->execute();
+        return true;
+    }
+
+    public static function suppression(string $email):void
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $query = $bd->prepare("DELETE FROM Utilisateur WHERE email = ? ");
+        $query->bindParam(1, $email);
+        $query->execute();
     }
 }

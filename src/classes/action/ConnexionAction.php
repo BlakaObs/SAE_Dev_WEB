@@ -18,7 +18,7 @@ class ConnexionAction extends Action
         <html>
             <body>
                 <div id="container">
-                    <form action="?action={$_GET['action']}" method="post">
+                    <form action="?action=${_GET['action']}" method="post">
                         <h1>Connexion</h1>
                             <label><b>Email</b></label>
                                 <input type="text" name="email" placeholder="mail@mail.com" required>
@@ -60,6 +60,9 @@ class ConnexionAction extends Action
                 <link rel="stylesheet" href="connexion.css" type="text/css" />
                 HTML;
 
+            }catch (ValiderException $e){
+                $html .= "<p>Le compte n'est pas valide.</p>";
+                $html .= "<br><a href='index.php'>Retour</a>";
             }catch (\Exception $e){
                 $html .= <<<HTML
 

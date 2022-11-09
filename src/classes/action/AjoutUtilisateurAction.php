@@ -52,27 +52,13 @@ class AjoutUtilisateurAction extends Action
             } else {
                 try {
                     if (Authentification::register($email, $passwd)) {
-
-                        $html .= <<<HTML
-
-                <html>                       
-                    <h1>      
-                        <p>Compte correctement crée</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="connexion.css" type="text/css" />
-                HTML;
-                    } else    $html .= <<<HTML
-
-                <html>                       
-                    <h1>      
-                        <p>Veuillez rentrer un email correct</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="connexion.css" type="text/css" />
-                HTML;
+                        $html .= "<p>Veuillez valider votre compte</p>";
+                        $token = uniqid();
+                        $_SESSION['token'] = $token;
+                        $expire = time()+60;
+                        $html .= "<br><a href=". "?action=activation&token=$token&email=$email&expire=$expire". ">Activation</a>";
+                    } else $html .= "<p>L'email existe déjà</p>";
+                    $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
                 } catch (EmailDejaExistantException $e) {
                     $html .= <<<HTML
 

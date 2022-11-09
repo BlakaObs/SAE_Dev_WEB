@@ -2,6 +2,7 @@
 
 namespace sae\web\dispatch;
 
+use sae\web\action\ActivationAction;
 use sae\web\action\AffichageListeAction;
 use sae\web\action\AfficherCommentaireAction;
 use sae\web\action\AfficherDetailEpisodeAction;
@@ -48,6 +49,9 @@ class Dispatcher
                 break;
             case "deconnexion":
                 $action = new DeconnexionAction();
+                break;
+            case "activation":
+                $action = new ActivationAction();
                 break;
             case "ajoutNoteCom":
                 $action = new AjoutNoteComAction();
