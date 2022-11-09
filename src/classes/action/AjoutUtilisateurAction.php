@@ -39,22 +39,63 @@ class AjoutUtilisateurAction extends Action
             $passwd = filter_var($_POST['password']);
             $passwdCheck = filter_var($_POST['passwordCheck']);
             if ($passwd != $passwdCheck) {
-                $html .= "<p>Les mots de passe ne sont pas identiques</p>";
                 $html .= <<<HTML
-                    <a href="index.php">Retour à l'accueil</a>
+
+                <html>                       
+                    <h1>      
+                        <p>Les mots de passes ne sont pas identiques</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
                 HTML;
             } else {
                 try {
                     if (Authentification::register($email, $passwd)) {
-                        $html .= "<p>Compte correctement crée</p>";
-                    } else $html .= "<p>L'email existe déjà</p>";
-                    $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
+
+                        $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>Compte correctement crée</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
+                    } else    $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>Veuillez rentrer un email correct</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
                 } catch (EmailDejaExistantException $e) {
-                    $html .= "<p>L'email est déjà enregistré</p>";
-                    echo "<br><a href='index.php'>Retour</a>";
+                    $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>L'email est déjà enregistré</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
                 } catch (MotDePasseTropCourtException $e) {
-                    $html .= "<p>Votre mot de passe est trop court</p>";
-                    $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
+
+                    $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>Votre mot de passe est trop court</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
                 }
             }
         }

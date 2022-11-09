@@ -3,6 +3,7 @@
 namespace sae\web\dispatch;
 
 use sae\web\action\AffichageListeAction;
+use sae\web\action\AfficherCommentaireAction;
 use sae\web\action\AfficherDetailEpisodeAction;
 use sae\web\action\AfficherDetailSerieAction;
 use sae\web\action\AjoutNoteComAction;
@@ -50,6 +51,9 @@ class Dispatcher
                 break;
             case "ajoutNoteCom":
                 $action = new AjoutNoteComAction();
+                break;
+            case "afficherCommentaire":
+                $action = new AfficherCommentaireAction();
                 break;
             default:
                 $action = <<<HTML

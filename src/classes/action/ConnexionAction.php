@@ -49,12 +49,28 @@ class ConnexionAction extends Action
                 HTML;
                 $_SESSION['user']=$email;
             }catch (MotDePasseException $e){
-                $html .= "<p>Le mot de passe est incorrect.</p>";
-                $html .= "<br><a href='index.php'>Retour</a>";
+                $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>Le mot de passe est incorrect</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
 
             }catch (\Exception $e){
-                $html .= "<p>Le compte n'existe pas .</p>";
-                $html .= "<br><a href='index.php'>Retour</a>";
+                $html .= <<<HTML
+
+                <html>                       
+                    <h1>      
+                        <p>Le compte n'existe pas</p>
+                    </h1> 
+                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                </html>
+                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                HTML;
             }
         }
         return $html;

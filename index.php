@@ -38,8 +38,12 @@ if (isset($_GET['action'])) {
         $queryEnCours->execute();
 
         $action = <<< HTML
-        <p>Connecté en tant que : {$_SESSION['user']}</p> 
-        <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
+        
+        <html>
+            <p>Connecté en tant que : {$_SESSION['user']}</p> 
+                <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
+            <link rel="stylesheet" href="accueil.css" type="text/css" />
+        </html>
         HTML;
         if ($queryPref->rowCount() == 0) {
             $action .= "<br>Aucune série préférée 😢<br>";
