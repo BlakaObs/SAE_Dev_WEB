@@ -2,14 +2,13 @@
 
 namespace sae\web\action;
 
+use Exception;
 use sae\web\exception\MotDePasseException;
-use sae\web\exception\MotDePasseTropCourtException;
 use sae\web\authentification\Authentification;
+use sae\web\exception\ValiderException;
 
 class ConnexionAction extends Action
 {
-    /**
-     */
     public function execute(): string
     {
         $html = "";
@@ -63,7 +62,7 @@ class ConnexionAction extends Action
             }catch (ValiderException $e){
                 $html .= "<p>Le compte n'est pas valide.</p>";
                 $html .= "<br><a href='index.php'>Retour</a>";
-            }catch (\Exception $e){
+            }catch (Exception $e){
                 $html .= <<<HTML
 
                 <html>                       

@@ -2,8 +2,9 @@
 
 namespace sae\web\authentification;
 
+use Exception;
+use sae\web\exception\UtilisateurInexistantException;
 use sae\web\exception\ValiderException;
-use http\Exception;
 use PDO;
 use sae\web\exception\EmailDejaExistantException;
 use sae\web\exception\MotDePasseException;
@@ -47,7 +48,9 @@ class Authentification
 
     /**
      * @throws MotDePasseException
-     * @throws \Exception
+     * @throws
+     * @throws UtilisateurInexistantException
+     * @throws ValiderException
      */
     public static function authenticate(string $email, string $mdp): bool
     {
@@ -57,12 +60,14 @@ class Authentification
         $query->execute();
         $data = $query->fetch(PDO::FETCH_ASSOC);
         if ($query->rowCount() == 0) {
-            throw new \Exception();
+            throw new UtilisateurInexistantException();
         } else {
             $mdpCourant = $data['password'];
         }
         if (!password_verify($mdp, $mdpCourant)) throw new MotDePasseException();
-        if ($data['valid'] == 0) throw new ValiderException("Compte non valide");
+        if ($data['valid'] == 0) {
+            throw new ValiderException();
+        }
         return true;
     }
 

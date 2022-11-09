@@ -13,8 +13,9 @@ class AjoutNoteComAction extends Action
     public function execute(): string
     {
         $html = "";
-        if ($_SERVER['REQUEST_METHOD'] === "GET") {
-            $html .= <<<HTML
+        if (isset($_SESSION['user'])) {
+            if ($_SERVER['REQUEST_METHOD'] === "GET") {
+                $html .= <<<HTML
                 <form action=?action={$_GET['action']}&id={$_GET['id']} method="post">
                     <textarea name="commentaire" rows="7" cols="70" placeholder="ajouter un commentaire"></textarea>
                     <select name="note">
@@ -27,16 +28,16 @@ class AjoutNoteComAction extends Action
                     <button type="submit">Poster</button>
                 </form>
             HTML;
-        } else {
-            $commentaire = filter_var($_POST['commentaire'], FILTER_SANITIZE_STRING);
-            $note = filter_var($_POST['note'], FILTER_SANITIZE_NUMBER_INT);
-            $bd = ConnectionFactory::makeConnection();
+            } else {
+                $commentaire = filter_var($_POST['commentaire'], FILTER_SANITIZE_STRING);
+                $note = filter_var($_POST['note'], FILTER_SANITIZE_NUMBER_INT);
+                $bd = ConnectionFactory::makeConnection();
 
-            $queryCheckCommentaire = $bd->prepare("SELECT * FROM Commentaire WHERE email = '{$_SESSION['user']}' and serie_id = '{$_GET['id']}'");
-            $queryCheckCommentaire->execute();
+                $queryCheckCommentaire = $bd->prepare("SELECT * FROM Commentaire WHERE email = '{$_SESSION['user']}' and serie_id = '{$_GET['id']}'");
+                $queryCheckCommentaire->execute();
 
-            if ($queryCheckCommentaire->rowCount() > 0) {
-                $html .= <<<HTML
+                if ($queryCheckCommentaire->rowCount() > 0) {
+                    $html .= <<<HTML
 
                 <html>                       
                     <h1>      
@@ -46,10 +47,10 @@ class AjoutNoteComAction extends Action
                 </html>
                 <link rel="stylesheet" href="connexion.css" type="text/css" />
                 HTML;
-            } else {
-                $queryAjoutCommentaire = $bd->prepare("INSERT INTO Commentaire VALUES ('{$_SESSION['user']}', '{$_GET['id']}', '$commentaire', '$note')");
-                $queryAjoutCommentaire->execute();
-                $html .= <<<HTML
+                } else {
+                    $queryAjoutCommentaire = $bd->prepare("INSERT INTO Commentaire VALUES ('{$_SESSION['user']}', '{$_GET['id']}', '$commentaire', '$note')");
+                    $queryAjoutCommentaire->execute();
+                    $html .= <<<HTML
 
                 <html>                       
                     <h1>      
@@ -59,7 +60,10 @@ class AjoutNoteComAction extends Action
                 </html>
                 <link rel="stylesheet" href="connexion.css" type="text/css" />
                 HTML;
+                }
             }
+        } else {
+            $html .= "Que faites-vous là ?.. 🔫";
         }
         return $html;
     }

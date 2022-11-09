@@ -6,7 +6,6 @@ use sae\web\factory\ConnectionFactory;
 
 class SupprPreferencesAction extends Action
 {
-
     public function execute(): string
     {
         $html = "";
@@ -19,7 +18,6 @@ class SupprPreferencesAction extends Action
         $query->execute();
         $html .= "Supression de la série à vos préférences effectué <br>";
         $html .= "<a href='index.php'>Retour à l'accueil</a>";
-
         return $html;
     }
 }
