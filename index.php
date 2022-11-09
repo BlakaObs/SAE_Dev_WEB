@@ -13,6 +13,7 @@ if (isset($_GET['action'])) {
 } else {
     $action = <<< HTML
         <html>
+        <link rel="stylesheet" href="connexion.css" type="text/css" />
         <plan>
             <header>
                 <h1>Bienvenue sur NetVOD</h1>
@@ -20,7 +21,6 @@ if (isset($_GET['action'])) {
               <body>           
                         <a style="display: inline" href="?action=connexion">Connexion</a> <a style="display: inline" <a href="?action=inscription">Inscription  </a>            
               </body>
-        <link rel="stylesheet" href="connexion.css" type="text/css" />
         </plan>
         </html>
         HTML;
@@ -38,9 +38,11 @@ if (isset($_GET['action'])) {
         $action = <<< HTML
         
         <html>
-            <p>Connecté en tant que : {$_SESSION['user']}</p> 
-                <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
-            <link rel="stylesheet" href="accueil.css" type="text/css" />
+            <h1>
+                <p>Connecté en tant que : {$_SESSION['user']}</p> 
+            </h1> 
+                    <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
+                <link rel="stylesheet" href="accueil.css" type="text/css" />
         </html>
         HTML;
         if ($queryPref->rowCount() == 0) {
@@ -72,7 +74,7 @@ if (isset($_GET['action'])) {
         </ul></a>
         HTML;
         }
-        $action .= '<a href="?action=deconnexion">Se déconnecter</a>';
+        $action .= '<footer> <h2><deconnexion><a href="?action=deconnexion">Se déconnecter</a></deconnexion></h2></footer> ';
 
     }
     echo $action;
