@@ -13,7 +13,7 @@ if (isset($_GET['action'])) {
 } else {
     $action = <<< HTML
         <html>
-        <link rel="stylesheet" href="connexion.css" type="text/css" />
+            <link rel="stylesheet" href="connexion.css" type="text/css" />
         <plan>
             <header>
                 <h1>Bienvenue sur NetVOD</h1>
@@ -41,17 +41,21 @@ if (isset($_GET['action'])) {
             <h1>
                 <p>Connecté en tant que : {$_SESSION['user']}</p> 
             </h1> 
-                    <a href="?action=affichageListe">Afficher le catalogue de séries</a><br>
-                <link rel="stylesheet" href="accueil.css" type="text/css" />
+                    <h3><a href="?action=affichageListe">Afficher le catalogue de séries</a></h3><br>
+                <link rel="stylesheet" href="css/accueil.css" type="text/css" />
         </html>
         HTML;
         if ($queryPref->rowCount() == 0) {
             $action .= "<br>Aucune série préférée 😢<br>";
         } else {
-            $action .= "<br>Mes séries préférées !<ul>";
+            $action .= <<< HTML
+               <br>Mes séries préférées !<ul>
+            HTML;
 
             while ($data = $queryPref->fetch()) {
                 $action .= "<li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
+                $action .= <<< HTML
+            HTML;
             }
 
             $action .= <<<HTML
@@ -61,7 +65,10 @@ if (isset($_GET['action'])) {
 
         if ($queryEnCours->rowCount() > 0) {
             $action .= <<<HTML
-        <a>Mes séries en cours !
+            
+ 
+              <a>Mes séries en cours !
+               
         <ul>
         HTML;
 
