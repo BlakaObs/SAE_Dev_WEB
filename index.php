@@ -13,15 +13,26 @@ if (isset($_GET['action'])) {
 } else {
     $action = <<< HTML
         <html>
-            <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-        <plan>
-            <header>
-                <h1>Bienvenue sur NetVOD</h1>
-            </header>
-              <body>           
-                        <a style="display: inline" href="?action=connexion">Connexion</a> <a style="display: inline" <a href="?action=inscription">Inscription  </a>            
-              </body>
-        </plan>
+            <link rel="stylesheet" href="css/connexion.css" type="text/css" />  
+                <div class="parent">
+                    <div class="div1">  
+                        <h1>Bienvenue sur NetVOD</h1>
+                       </div>
+               
+          
+                <body>     
+                    <div class="div2">
+                        <h2>               
+                            <a href="?action=connexion">Connexion</a>
+                        </h2> 
+                    </div>
+                    <div class="div3"> 
+                        <h2> 
+                            <a  href="?action=inscription">Inscription  </a>
+                        </h2>
+                    </div>            
+                </body>  
+               </div> 
         </html>
         HTML;
 

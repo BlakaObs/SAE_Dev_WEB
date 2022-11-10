@@ -42,14 +42,19 @@ class AjoutUtilisateurAction extends Action
             // vérification des MDP
             if ($passwd != $passwdCheck) {
                 $html .= <<<HTML
-                <html>                       
-                    <h1>      
-                        <p>Les mots de passes ne sont pas identiques</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>Les mots de passe ne sont pas identiques</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
             } else {
                 try {
                     if (Authentification::register($email, $passwd)) {
@@ -66,7 +71,12 @@ class AjoutUtilisateurAction extends Action
                         <h1>      
                             <p>L'email est déjà enregistré</p>
                         </h1> 
-                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
                     </html>
                     <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;
@@ -76,7 +86,12 @@ class AjoutUtilisateurAction extends Action
                         <h1>      
                             <p>Votre mot de passe est trop court</p>
                         </h1> 
-                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
                     </html>
                     <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;
