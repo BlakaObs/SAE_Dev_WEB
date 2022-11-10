@@ -5,11 +5,13 @@ namespace sae\web\action;
 use sae\web\authentification\Authentification;
 use sae\web\exception\EmailDejaExistantException;
 use sae\web\exception\MotDePasseTropCourtException;
+use sae\web\factory\ConnectionFactory;
 
 class AjoutUtilisateurAction extends Action
 {
     public function execute(): string
     {
+        Authentification::suppression();
         $html = "";
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
@@ -42,31 +44,70 @@ class AjoutUtilisateurAction extends Action
             // vérification des MDP
             if ($passwd != $passwdCheck) {
                 $html .= <<<HTML
-                <html>                       
-                    <h1>      
-                        <p>Les mots de passes ne sont pas identiques</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>Les mots de passe ne sont pas identiques</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
             } else {
                 try {
                     if (Authentification::register($email, $passwd)) {
-                        $html .= "<p>Veuillez valider votre compte</p>";
+                        $html .= <<<HTML
+                    <html>                       
+                        <h1>      
+                            <p>Veuillez valider votre compte</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                   
+                    HTML;
                         $token = uniqid();
                         $_SESSION['token'] = $token;
                         $expire = time() + 60;
-                        $html .= "<br><a href=" . "?action=activation&token=$token&email=$email&expire=$expire" . ">Activation</a>";
-                    } else $html .= "<p>L'email existe déjà</p>";
-                    $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
+                        $html .= <<<HTML
+                            <br><a href="?action=activation&token=$token&email=$email&expire=$expire" . ">Activation</a><br><br>
+
+                         <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
+                    } else   $html .= <<<HTML
+                    <html>                       
+                        <h1>      
+                            <p>Veuillez rentrer un email correct</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
                 } catch (EmailDejaExistantException $e) {
                     $html .= <<<HTML
                     <html>                       
                         <h1>      
                             <p>L'email est déjà enregistré</p>
                         </h1> 
-                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
                     </html>
                     <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;
@@ -76,7 +117,12 @@ class AjoutUtilisateurAction extends Action
                         <h1>      
                             <p>Votre mot de passe est trop court</p>
                         </h1> 
-                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
                     </html>
                     <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;

@@ -12,6 +12,7 @@ use sae\web\action\AjoutPreferencesAction;
 use sae\web\action\AjoutUtilisateurAction;
 use sae\web\action\ConnexionAction;
 use sae\web\action\DeconnexionAction;
+use sae\web\action\RechercheCataAction;
 use sae\web\action\ModificationProfilAction;
 use sae\web\action\SupprPreferencesAction;
 
@@ -59,6 +60,9 @@ class Dispatcher
                 break;
             case "afficherCommentaire":
                 $action = new AfficherCommentaireAction();
+                break;
+            case "recherche":
+                $action = new RechercheCataAction();
                 break;
             case "modificationProfil":
                 $action = new ModificationProfilAction();

@@ -6,6 +6,7 @@ use sae\web\factory\ConnectionFactory;
 
 class AffichageListeAction extends Action
 {
+
     public function execute(): string
     {
         $html = "";
@@ -18,6 +19,14 @@ class AffichageListeAction extends Action
             $bd = ConnectionFactory::makeConnection();
             $query = $bd->prepare("SELECT id, titre, img FROM serie");
             $query->execute();
+
+            $html .= <<<html
+                <form action="?action=recherche&" method="post">
+                    <input type='text' name='recherche' required> 
+                    <button type='submit'>Rechercher</button>
+                </form>
+            html;
+
             $html .= "<ul>";
 
             // affichage des différentes séries
@@ -29,7 +38,16 @@ class AffichageListeAction extends Action
             $html .= "</ul>";
             $html .= "<a href='index.php'>Retour à l'accueil</a>";
         } else {
-            $html .= "Que faites-vous là ?.. 🔫";
+            $html .= <<<HTML
+                <html>
+                    <body id="fondRock">                     
+                        <h1>      
+                            <p>Que faites-vous là ?.. 🔫</p>
+                        </h1>
+                        <link rel="stylesheet" href="css/rock.css" type="text/css" />     
+                    </body>              
+                </html>
+                HTML;
         }
         return $html;
     }

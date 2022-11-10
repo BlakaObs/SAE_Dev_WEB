@@ -91,11 +91,10 @@ class Authentification
         return true;
     }
 
-    public static function suppression(string $email): void
+    public static function suppression(): void
     {
         $bd = ConnectionFactory::makeConnection();
-        $query = $bd->prepare("DELETE FROM Utilisateur WHERE email = ? ");
-        $query->bindParam(1, $email);
+        $query = $bd->prepare("DELETE FROM Utilisateur WHERE valid = 0");
         $query->execute();
     }
 }
