@@ -20,23 +20,36 @@ class AffichageListeAction extends Action
             $query = $bd->prepare("SELECT id, titre, img FROM serie");
             $query->execute();
 
-            $html .= <<<html
-                <form action="?action=recherche&" method="post">
-                    <input type='text' name='recherche' required> 
-                    <button type='submit'>Rechercher</button>
-                </form>
-            html;
-
-            $html .= "<ul>";
+            $html .= <<<HTML
+            <html>
+                <body>
+                    <div class="parent">
+                        <div class="div7">
+                            <form action="?action=recherche&" method="post">
+                                <input type='text' name='recherche' required> 
+                                <button type='submit'>Rechercher</button>
+                            </form>
+                        </div>
+            HTML;
 
             // affichage des différentes séries
             while ($data = $query->fetch()) {
                 $id = $data['id'];
-                $html .= "<li><a href='?action=afficherDetailSerie&id=$id'>Titre : " . $data['titre'] . "</a><br><img src='src/ressources/images/" . $data['img']
-                    . "' alt='Image correspondant à la série '></li><br>";
+
+                $html .= "<div class='div$id'<li><a href='?action=afficherDetailSerie&id=$id'>Titre : " . $data['titre'] . "</a><br><img src='src/ressources/images/" . $data['img']
+                    . "' alt='Image correspondant à la série '><br></li></div>";
+
+                //$html .= "<li><a href='?action=afficherDetailSerie&id=$id'>Titre : " . $data['titre'] . "</a><br><img src='src/ressources/images/" . $data['img']
+                //. "' alt='Image correspondant à la série '></li><br>";
             }
-            $html .= "</ul>";
-            $html .= "<a href='index.php'>Retour à l'accueil</a>";
+
+            $html .=<<<HTML
+                        <div class="div8"> <a href='index.php'>Retour à l'accueil</a></div>
+                    </div>
+                </body>
+            </html>
+            <link rel="stylesheet" href="css/catalogue.css" type="text/css" />
+            HTML;
         } else {
             $html .= <<<HTML
                 <html>
@@ -52,3 +65,4 @@ class AffichageListeAction extends Action
         return $html;
     }
 }
+

@@ -30,13 +30,14 @@ footer{
 }
 
 a {
-    outline: none;
-    text-decoration: none;
+
+    text-decoration: underline;
+    text-decoration-color: #1b2e3c;
     padding: 2px 1px 0;
 }
 
 a:read-only{
-    color: #f3f3e2;
+    color: #1b2e3c;
 }
 a:hover{
     color: red;
