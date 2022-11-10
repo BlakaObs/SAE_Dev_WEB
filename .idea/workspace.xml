@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Suppression des utilisateurs non valides lors de l'inscription.">
-      <change afterPath="$PROJECT_DIR$/css/serie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/catalogue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/db.conf.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
-    </list>
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Ajout de css" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
