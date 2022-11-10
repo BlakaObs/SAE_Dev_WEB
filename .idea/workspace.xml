@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="modification de css">
+      <change afterPath="$PROJECT_DIR$/css/Rock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/rock.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/connexion.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/ActivationAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ActivationAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherCommentaireAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherCommentaireAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailEpisodeAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutNoteComAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutPreferencesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutPreferencesAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AjoutUtilisateurAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ConnexionAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/DeconnexionAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/DeconnexionAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/ModificationProfilAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/ModificationProfilAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/SupprPreferencesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/SupprPreferencesAction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,13 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;W:/Developpement Web/SAE_Dev_WEB&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -79,7 +97,9 @@
       <workItem from="1667985231860" duration="5065000" />
       <workItem from="1667998406139" duration="10961000" />
       <workItem from="1668063056530" duration="713000" />
-      <workItem from="1668063796694" duration="4105000" />
+      <workItem from="1668063796694" duration="4811000" />
+      <workItem from="1668068678780" duration="50000" />
+      <workItem from="1668068754027" duration="1671000" />
     </task>
     <task id="LOCAL-00001" summary="Création de la classe ConnexionAction et des classe autour">
       <created>1667831242116</created>
@@ -200,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668064193184</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="modification de css">
+      <created>1668067943812</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1668067943812</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

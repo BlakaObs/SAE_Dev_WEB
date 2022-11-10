@@ -63,8 +63,20 @@ class AjoutUtilisateurAction extends Action
                         $_SESSION['token'] = $token;
                         $expire = time() + 60;
                         $html .= "<br><a href=" . "?action=activation&token=$token&email=$email&expire=$expire" . ">Activation</a>";
-                    } else $html .= "<p>L'email existe déjà</p>";
-                    $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
+                    } else   $html .= <<<HTML
+                    <html>                       
+                        <h1>      
+                            <p>Veuillez rentrer un email correct</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
                 } catch (EmailDejaExistantException $e) {
                     $html .= <<<HTML
                     <html>                       

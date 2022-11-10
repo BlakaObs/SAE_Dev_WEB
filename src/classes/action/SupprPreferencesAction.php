@@ -20,8 +20,20 @@ class SupprPreferencesAction extends Action
         $query->bindParam(2, $_GET['id']);
 
         $query->execute();
-        $html .= "Supression de la série à vos préférences effectué <br>";
-        $html .= "<a href='index.php'>Retour à l'accueil</a>";
+        $html .= <<<HTML
+                    <html>                       
+                        <h1>      
+                            <p>Suppresion de la série de vos préférence</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
         return $html;
     }
 }

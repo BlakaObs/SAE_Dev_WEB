@@ -38,38 +38,53 @@ class ConnexionAction extends Action
             try {
                 Authentification::authenticate($email, $passwd);
                 $html .= <<<HTML
-                <html>                       
-                    <h1>      
-                        <p>Connexion réussie</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>Connexion réussie</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
                 $_SESSION['user'] = $email;
             } catch (MotDePasseException $e) {
                 $html .= <<<HTML
-                <html>                       
-                    <h1>      
-                        <p>Le mot de passe est incorrect</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>Le mot de passe est incorrect</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
             } catch (ValiderException $e) {
                 $html .= "<p>Le compte n'est pas valide.</p>";
                 $html .= "<br><a href='index.php'>Retour</a>";
             } catch (Exception $e) {
                 $html .= <<<HTML
-                <html>                       
-                    <h1>      
-                        <p>Le compte n'existe pas</p>
-                    </h1> 
-                        <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
-                </html>
-                <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-                HTML;
+                    <html>                       
+                        <h1>      
+                            <p>Le compte n'existe pas</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
             }
         }
         return $html;

@@ -43,30 +43,51 @@ class AjoutNoteComAction extends Action
                     $html .= <<<HTML
                     <html>                       
                         <h1>      
-                            <p>Vous avez déjà écrit un commentaire pour cette série 🔫</p>
+                            <p>Vous avez déjà écris un commentaire pour cette série</p>
                         </h1> 
-                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
                     </html>
                     <link rel="stylesheet" href="css/connexion.css" type="text/css" />
-                HTML;
+                    HTML;
+
                 } else {
 
                     // requête pour insérer un commentaire dans la BDD
                     $queryAjoutCommentaire = $bd->prepare("INSERT INTO Commentaire VALUES ('{$_SESSION['user']}', '{$_GET['id']}', '$commentaire', '$note')");
                     $queryAjoutCommentaire->execute();
+
                     $html .= <<<HTML
                     <html>                       
                         <h1>      
-                            <p>Commentaire publié !</p>
+                            <p>Commentaire publié</p>
                         </h1> 
-                            <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
                     </html>
                     <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;
                 }
             }
         } else {
-            $html .= "Que faites-vous là ?.. 🔫";
+            $html .= <<<HTML
+                <html>
+                    <body id="fondRock">                     
+                        <h1>      
+                            <p>Que faites-vous là ?.. 🔫</p>
+                        </h1>
+                        <link rel="stylesheet" href="css/rock.css" type="text/css" />     
+                    </body>              
+                </html>
+                HTML;
         }
         return $html;
     }

@@ -100,7 +100,16 @@ class AfficherDetailSerieAction extends Action
 
             $html .= "<a href='index.php'>Retour à l'accueil</a>";
         } else {
-            $html .= "Que faites-vous là ?.. 🔫";
+            $html .= <<<HTML
+                <html>
+                    <body id="fondRock">                     
+                        <h1>      
+                            <p>Que faites-vous là ?.. 🔫</p>
+                        </h1>
+                        <link rel="stylesheet" href="css/rock.css" type="text/css" />     
+                    </body>              
+                </html>
+                HTML;
         }
         return $html;
     }

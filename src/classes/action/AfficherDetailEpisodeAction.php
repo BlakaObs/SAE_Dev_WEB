@@ -38,14 +38,15 @@ class AfficherDetailEpisodeAction extends Action
             $update->execute();
         } else {
             $html .= <<<HTML
-                <html>                       
-                    <h1>      
-                        <p>Que faites-vous là ?.. 🔫</p>
-                    </h1> 
-                                    
+                <html>
+                    <body id="fondRock">                     
+                        <h1>      
+                            <p>Que faites-vous là ?.. 🔫</p>
+                        </h1>
+                        <link rel="stylesheet" href="css/rock.css" type="text/css" />     
+                    </body>              
                 </html>
                 HTML;
-
         }
         return $html;
     }
