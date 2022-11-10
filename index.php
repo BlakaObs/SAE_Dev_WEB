@@ -13,7 +13,7 @@ if (isset($_GET['action'])) {
 } else {
     $action = <<< HTML
         <html>
-            <link rel="stylesheet" href="connexion.css" type="text/css" />
+            <link rel="stylesheet" href="css/connexion.css" type="text/css" />
         <plan>
             <header>
                 <h1>Bienvenue sur NetVOD</h1>
@@ -66,7 +66,6 @@ if (isset($_GET['action'])) {
         if ($queryEnCours->rowCount() > 0) {
             $action .= <<<HTML
             
- 
               <a>Mes séries en cours !
                
         <ul>

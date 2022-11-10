@@ -31,7 +31,7 @@ class AjoutUtilisateurAction extends Action
                     </div>
                 </body>
             </html>
-            <link rel="stylesheet" href="connexion.css" type="text/css" />
+            <link rel="stylesheet" href="css/connexion.css" type="text/css" />
             </form>
             HTML;
         } else {
@@ -48,7 +48,7 @@ class AjoutUtilisateurAction extends Action
                     </h1> 
                         <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
                 </html>
-                <link rel="stylesheet" href="connexion.css" type="text/css" />
+                <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                 HTML;
             } else {
                 try {
@@ -68,7 +68,7 @@ class AjoutUtilisateurAction extends Action
                         </h1> 
                             <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
                     </html>
-                    <link rel="stylesheet" href="connexion.css" type="text/css" />
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;
                 } catch (MotDePasseTropCourtException $e) {
                     $html .= <<<HTML
@@ -78,7 +78,7 @@ class AjoutUtilisateurAction extends Action
                         </h1> 
                             <ok><a href='index.php'>Retour a l'accueil</a>   </ok>              
                     </html>
-                    <link rel="stylesheet" href="connexion.css" type="text/css" />
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
                     HTML;
                 }
             }
