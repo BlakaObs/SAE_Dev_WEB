@@ -47,41 +47,45 @@ if (isset($_GET['action'])) {
         $queryEnCours->execute();
 
         $action = <<< HTML
-        
+        <link rel="stylesheet" href="css/accueil.css" type="text/css" />
         <html>
+        
             <h1>
                 <p>Connecté en tant que : {$_SESSION['user']} 
                 
                 <a href="?action=modificationProfil">(modifier mon profil)</a></p> 
-            </h1> 
-                    <h3><a href="?action=affichageListe">Afficher le catalogue de séries</a></h3><br>
-                <link rel="stylesheet" href="css/accueil.css" type="text/css" />
+            </h1>           
+            <div class="parent">     
+                        <div class="div1">
+                            <h3>
+                                <a href="?action=affichageListe">Afficher le catalogue de séries</a>
+                            </h3>
+                        </div>
+                
         </html>
         HTML;
         if ($queryPref->rowCount() == 0) {
-            $action .= "<br>Aucune série préférée 😢<br>";
+            $action .= "<br><div class='div2'> Aucune série préférée 😢<br></div>";
         } else {
             $action .= <<< HTML
-               <br>Mes séries préférées !<ul>
+               <br><div class='div2'>  Mes séries préférées !
             HTML;
 
             while ($data = $queryPref->fetch()) {
-                $action .= "<li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
-                $action .= <<< HTML
-               
-            HTML;
+                $action .= "    <li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
+
             }
             $action .= <<<HTML
-        </ul>
+        </div>
         HTML;
         }
 
         if ($queryEnCours->rowCount() > 0) {
             $action .= <<<HTML
-            
+            <div class='div3'>
               Mes séries en cours !
                
-        <ul>
+        
         HTML;
 
             $queryEnCours->execute();
@@ -90,10 +94,10 @@ if (isset($_GET['action'])) {
                 $action .= "<li><a href=\"?action=afficherDetailSerie&id={$data['id']}\">{$data['titre']}</a></li>";
             }
             $action .= <<<HTML
-        </ul></a>
+        </a></div>
         HTML;
         }
-        $action .= '<footer> <h2><deconnexion><a href="?action=deconnexion">Se déconnecter</a></deconnexion></h2></footer> ';
+        $action .= '<footer> <h2><deconnexion><a href="?action=deconnexion">Se déconnecter</a></deconnexion></h2></footer></div> ';
 
     }
     echo $action;

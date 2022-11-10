@@ -23,13 +23,33 @@ class AfficherDetailEpisodeAction extends Action
             $id = $data['serie_id'];
 
             // affichage des informations
-            $html .= "Titre : " . $data['titre'] .
-                "<br> Resume : " . $data['resume'] .
-                "<br> Duree: " . $data['duree'] .
+
+            $html .= <<<HTML
+                <html>
+                    <body>
+                        <div class="parent">
+                           
+                HTML;
+
+            $html .= "<link rel='stylesheet' href='css/episode.css' type='text/css' />";
+            $html .= "<div class='div1'> <h1> Titre : " . $data['titre'] ."</h1></div>"   .
+                "<br><div class='div5'> Resume : " . $data['resume'] .
+                "<br> Duree: " . $data['duree'] . "</div><div class='div2'>" .
                 '<br><video width="1280" height="720" controls >
-                <source src="src/ressources/videos/' . $data['file'] . '" type="video/mp4" > </video><br>' .
-                "<br><a href='?action=ajoutNoteCom&id={$id}'>Écrire un commentaire</a>" .
-                "<br><br><a href=\"index.php\">Retour à l'accueil</a>";
+                <source src="src/ressources/videos/' . $data['file'] . '" type="video/mp4" > </video><br></div>' .
+                "<br><div class='div4'><a href='?action=ajoutNoteCom&id={$id}'>Écrire un commentaire</a></div>";
+
+            $html .= <<<HTML
+              
+                            <div class='div3'>
+                                <a href='index.php'>Retour à l'accueil</a>
+                            </div>
+                        </div>
+                    </body>
+                </html> 
+              HTML;
+
+
 
             // requête permettant de mettre à jour la liste des séries en cours de l'utilisateur
             $update = $bd->prepare("UPDATE seriePref SET enCours = 1 WHERE serie_id = ? AND email = ?");

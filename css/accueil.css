@@ -1,7 +1,31 @@
 body{
     background-color:  #f3e3e2;
+    font-size: 20px;
+    color: #f3f3e2;
+
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
+.div1 { grid-area: 2 / 3 / 3 / 4;
+    }
+.div2 { grid-area: 3 / 2 / 5 / 3;
+    text-align: center;
+    background-color:  #74112f;
+    border: 3px solid black;}
+.div3 { grid-area: 3 / 4 / 5 / 5;
+    text-align: center;
+    background-color:  #74112f;
+    border: 3px solid black;}
+
+div{
+    text-align: center;
+}
 h1{
     color: white;
     background-color: #74112f;
@@ -18,6 +42,9 @@ h2{
     font-size: 20px;
     border: 3px solid #0c0c1e;
     color: white;
+}
+h3{
+    text-align: center;
 }
 
 footer{
@@ -37,7 +64,7 @@ a {
 }
 
 a:read-only{
-    color: #1b2e3c;
+    color: black;
 }
 a:hover{
     color: red;
