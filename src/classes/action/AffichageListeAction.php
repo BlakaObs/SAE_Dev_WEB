@@ -26,8 +26,8 @@ class AffichageListeAction extends Action
                     <div class="parent">
                         <div class="div7">
                             <form action="?action=recherche&" method="post">
-                                <input type='text' name='recherche' required> 
-                                <button type='submit'>Rechercher</button>
+                                <input type='text' name='recherche' placeholder="rechercher un mot clé" required> 
+                                <button type='submit'>Rechercher </button>
                             </form>
                         </div>
             HTML;
@@ -36,7 +36,7 @@ class AffichageListeAction extends Action
             while ($data = $query->fetch()) {
                 $id = $data['id'];
 
-                $html .= "<div class='div$id'<li><a href='?action=afficherDetailSerie&id=$id'>Titre : " . $data['titre'] . "</a><br><img src='src/ressources/images/" . $data['img']
+                $html .= "<div class='div$id'<li><a href='?action=afficherDetailSerie&id=$id'><h2>Titre :  " . $data['titre'] .  "</h2></a><br><img src='src/ressources/images/" . $data['img']
                     . "' alt='Image correspondant à la série '><br></li></div>";
 
                 //$html .= "<li><a href='?action=afficherDetailSerie&id=$id'>Titre : " . $data['titre'] . "</a><br><img src='src/ressources/images/" . $data['img']
@@ -44,7 +44,7 @@ class AffichageListeAction extends Action
             }
 
             $html .=<<<HTML
-                        <div class="div8"> <a href='index.php'>Retour à l'accueil</a></div>
+                        <div class="div8"> <a href='index.php'><h3>Retour à l'accueil</h3></a></div>
                     </div>
                 </body>
             </html>

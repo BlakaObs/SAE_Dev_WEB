@@ -43,34 +43,46 @@ class AfficherDetailSerieAction extends Action
 
             // affichage du détail des séries et des épisodes
             while ($data = $querySerie->fetch()) {
-                $html .= "Titre : " . $data['titre'] .
-                    "<br> Description : " . $data['descriptif'] .
-                    "<br> Année : " . $data['annee'] .
-                    "<br> Date d'ajout : " . $data['date_ajout'];
+                $html .= <<<HTML
+                <html>
+                    <body>
+                        <div class="parent">
+                           
+                HTML;
+
+                $html .= "<link rel='stylesheet' href='css/serie.css' type='text/css' />";
+                $html .= " <div class='div6'> <h1> Titre : " . $data['titre'] ."</h1></div>"   .
+                    "<div class='div7'>  Description : " . $data['descriptif'] .
+                    "</div><div class='div8'> Année : " . $data['annee'] .
+                    "<br>Date d'ajout : " . $data['date_ajout'];
                 if ($moyenne == 0.0) {
                     $html .= "<br> Nouvelle serie qui n'a pas encore de note <br> ";
                 } else {
                     $html .= "<br> Note Moyenne : " . $moyenne . "<br>";
                 }
-                $html .= "Nombre d'épisodes : " . $queryNbEpisodes->fetch()[0] . "<br>";
-                $html .= "Liste des épisodes : <br>";
+                $html .= "Nombre d'épisodes : " . $queryNbEpisodes->fetch()[0] . "</div>" ;
+
                 $queryEpisode->execute([$_GET['id']]);
-                $html .= "<ul>";
+
                 while ($data = $queryEpisode->fetch()) {
                     $id = $data['id'];
-                    $html .= "<li>Numéro : " . $data['numero'] .
-                        "<br> <a href='?action=afficherDetailEpisode&id=$id'>Titre : " . $data['titre'] . "</a>" .
-                        "<br> Durée : " . $data['duree'] . "</li><br>";
+                    $numero = $data['numero'];
+
+                    $html .= "<div class='div$numero' <li>Episode : " . $data['numero'] .
+                        "<br> <a href='?action=afficherDetailEpisode&id=$id'>Titre : " . $data['titre'] . "<br></a>" .
+                        " Durée : " . $data['duree'] . "</li></div>";
                 }
-                $html .= "</ul>";
+
             }
 
             // affichage du bouton des commentaires
             if ($moyenne != 0.0) {
                 $html .= <<<form
+            <div class='div9'>
                 <form action="?action=afficherCommentaire&id=${_GET['id']}" method="post">
-                    <button type='submit'>Afficher les commentaires</button><br>
+                   <button type='submit'style='width:100%'>Afficher les commentaires</button>
                 </form>
+            </div>
             form;
             }
 
@@ -86,19 +98,32 @@ class AfficherDetailSerieAction extends Action
             // affichage du bouton d'ajout/suppression des favoris
             if ($data['pref'] == 0) {
                 $html .= <<<form
+            
+            <div class='div10'>
                 <form action="?action=ajoutPreferences&id=${_GET['id']}" method="post">
-                    <button type='submit'>Ajouter à mes préférences</button><br>
+                    <button type='submit' style='width:100%'>Ajouter à mes préférences</button>
                 </form>
+            </div>
             form;
             } else {
                 $html .= <<<form
+            <div class='div10'>
                 <form action="?action=suprPreferences&id=${_GET['id']}" method="post">
-                    <button type='submit'>Retirer de mes préférences</button><br>
+                    <button type='submit' style='width:100%'>Retirer de mes préférences</button>
                 </form>
+            </div>
             form;
             }
 
-            $html .= "<a href='index.php'>Retour à l'accueil</a>";
+            $html .= <<<HTML
+              
+                            <div class='div11'>
+                                <a href='index.php'>Retour à l'accueil</a>
+                            </div>
+                        </div>
+                    </body>
+                </html> 
+              HTML;
         } else {
             $html .= <<<HTML
                 <html>

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/css/catalogue.css" afterDir="false" />
+    <list default="true" id="553ea7ca-861e-4107-af69-9a00611f68d4" name="Changes" comment="Suppression des utilisateurs non valides lors de l'inscription.">
+      <change afterPath="$PROJECT_DIR$/css/serie.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/catalogue.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/catalogue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/db.conf.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AffichageListeAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/action/AfficherDetailSerieAction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +61,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -90,6 +92,8 @@
       <workItem from="1668068678780" duration="50000" />
       <workItem from="1668068754027" duration="6199000" />
       <workItem from="1668075057528" duration="1927000" />
+      <workItem from="1668083776794" duration="6119000" />
+      <workItem from="1668090086729" duration="1212000" />
     </task>
     <task id="LOCAL-00001" summary="Création de la classe ConnexionAction et des classe autour">
       <created>1667831242116</created>
