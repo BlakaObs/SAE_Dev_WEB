@@ -1,2 +1,5 @@
 #Jetbrain dossier
-.idea
+.idea/
+
+#.ini files
+*.ini
