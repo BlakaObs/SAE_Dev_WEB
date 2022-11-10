@@ -46,6 +46,15 @@ class ModificationProfilAction extends Action
                     $genrePref = "";
                 }
 
+                $html .= <<<HTML
+                <link rel='stylesheet' href='css/profil.css' type='text/css' />
+                <html>
+                    <body>
+                        <div class="parent">
+                            <div class="div2">
+                           
+                HTML;
+
                 $html .= "Vos informations actuelles : <br>";
                 if ($nom != "") {
                     $html .= "Nom : " . $nom . "<br>";
@@ -58,13 +67,13 @@ class ModificationProfilAction extends Action
                     $html .= "Pas de prénom renseigné !<br>";
                 }
                 if ($genrePref != "") {
-                    $html .= "Genre préféré : " . $genrePref . "<br>";
+                    $html .= "Genre préféré : " . $genrePref . "<br></div>";
                 } else {
-                    $html .= "Pas de genre préféré renseigné !<br>";
+                    $html .= "Pas de genre préféré renseigné !<br></div>";
                 }
 
                 //formulaire d'ajout des informations de l'utilisateur après vérification
-                $html .= "<br>Mettez à jour vos données ! <br>";
+                $html .= "<br> <div class='div1'> Mettez à jour vos données ! <br>";
                 $html .= <<<HTML
                 <form action=?action={$_GET['action']} method="post">
                     <label><b>Nom</b></label>
@@ -82,9 +91,10 @@ class ModificationProfilAction extends Action
                     </select>
                     <button type="submit">Mettre à jour</button>
                 </form>
+                </div>
                 HTML;
 
-                $html .= "<a href='index.php'>Retour à l'accueil</a>";
+                $html .= "<div class='div3'><a href='index.php'>Retour à l'accueil</a></div></div></body></html>";
             } else {
                 $nom = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
                 $prenom = filter_var($_POST['prenom'], FILTER_SANITIZE_STRING);
@@ -104,8 +114,20 @@ class ModificationProfilAction extends Action
                     $queryUpdateGenrePref->execute();
                 }
 
-                $html .= "Vos informations ont bien été mises à jour !";
-                $html .= "<br><a href='index.php'>Retour à l'accueil</a>";
+                $html .= <<<HTML
+                            <html>                       
+                        <h1>      
+                            <p>Vos informations ont bien été mis à jour!</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                        <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
 
             }
         } else {

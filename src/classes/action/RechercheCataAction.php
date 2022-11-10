@@ -9,7 +9,13 @@ class RechercheCataAction extends Action
 
     public function execute(): string
     {
-        $html = "";
+        $html = <<<HTML
+                <link rel='stylesheet' href='css/serie.css' type='text/css' />
+                <html>
+                    <body>
+                        <div class="parent">
+                           
+                HTML;
 
 
         // connexion à la BDD

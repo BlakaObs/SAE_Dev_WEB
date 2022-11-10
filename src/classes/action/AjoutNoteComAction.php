@@ -15,9 +15,18 @@ class AjoutNoteComAction extends Action
             if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
                 //formulaire d'ajout d'un commentaire et d'une note
+
                 $html .= <<<HTML
+                <link rel='stylesheet' href='css/commentaire.css' type='text/css' />
+                    <html>
+               
+                    <body>
+                         
                 <form action=?action={$_GET['action']}&id={$_GET['id']} method="post">
-                    <textarea name="commentaire" rows="7" cols="70" placeholder="ajouter un commentaire (490 caractères)"></textarea>
+                <div class="parent">
+                            <div class='div1'>    
+                    <textarea name="commentaire" rows="7" cols="70" placeholder="ajouter un commentaire (490 caractères)"></textarea></div>
+                    <div class='div2'>    
                     <select name="note">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -25,8 +34,12 @@ class AjoutNoteComAction extends Action
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                    </div>
+                    <div class='div3'>    
                     <button type="submit">Poster</button>
+                    </div>
                 </form>
+            </div>
             HTML;
             } else {
                 $commentaire = filter_var($_POST['commentaire'], FILTER_SANITIZE_STRING);

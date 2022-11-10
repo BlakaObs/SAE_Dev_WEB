@@ -1,0 +1,21 @@
+body{
+    background-color: #f3e3e2 ;
+
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 2 / 3 / 5; }
+.div2 { grid-area: 3 / 3 / 4 / 4; }
+.div3 { grid-area: 4 / 3 / 5 / 4; }
+
+div{
+    text-align: center;
+}
+
