@@ -6,7 +6,6 @@ use sae\web\factory\ConnectionFactory;
 
 class AfficherCommentaireAction extends Action
 {
-
     public function execute(): string
     {
         $html = "";

@@ -10,12 +10,20 @@ class AfficherDetailSerieAction extends Action
     {
         $html = "";
 
+        // connexion à la BDD
+        $bd = ConnectionFactory::makeConnection();
+
+        // requête pour mettre à jour la moyenne de la série (ex: ajout d'un commentaire)
+        $queryUpdateMoyenne = $bd->prepare("UPDATE serie SET moyenne = (SELECT TRUNCATE(AVG(note),2) FROM Commentaire WHERE serie_id = ?) WHERE id = ?");
+        $queryUpdateMoyenne->bindParam(1, $_GET['id']);
+        $queryUpdateMoyenne->bindParam(2, $_GET['id']);
+        $queryUpdateMoyenne->execute();
+
+
         // vérification qu'un utilisateur est connecté
         if (isset($_SESSION['user'])) {
 
-            // connexion à la BDD
             // requête pour sélectionner les informations de la série
-            $bd = ConnectionFactory::makeConnection();
             $querySerie = $bd->prepare("SELECT titre, descriptif, annee, date_ajout FROM serie WHERE id = ?");
 
             // requête pour sélectionner le nombre d'épisodes
@@ -24,18 +32,12 @@ class AfficherDetailSerieAction extends Action
             // requête pour sélectionner les informations des épisodes
             $queryEpisode = $bd->prepare("SELECT id,numero, titre, duree FROM episode WHERE serie_id = ?");
 
-            // requête pour mettre à jour la moyenne de la série (ex: ajout d'un commentaire)
-            $queryUpdateMoyenne = $bd->prepare("UPDATE serie SET moyenne = (SELECT TRUNCATE(AVG(note),2) FROM Commentaire WHERE serie_id = ?) WHERE id = ?");
-            $queryUpdateMoyenne->bindParam(1, $_GET['id']);
-            $queryUpdateMoyenne->bindParam(2, $_GET['id']);
-
             // requête pour sélectionner la moyenne de la série
             $queryMoyenne = $bd->prepare("SELECT moyenne FROM serie WHERE id = ? ");
             $queryMoyenne->execute([$_GET['id']]);
             $querySerie->execute([$_GET['id']]);
             $queryEpisode->execute([$_GET['id']]);
             $queryNbEpisodes->execute([$_GET['id']]);
-            $queryUpdateMoyenne->execute();
 
             $moyenne = $queryMoyenne->fetch()[0];
 

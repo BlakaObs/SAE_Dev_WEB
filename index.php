@@ -39,7 +39,7 @@ if (isset($_GET['action'])) {
         
         <html>
             <h1>
-                <p>Connecté en tant que : {$_SESSION['user']}</p> 
+                <p>Connecté en tant que : {$_SESSION['user']} <a href="?action=modificationProfil">(modifier mon profil)</a></p> 
             </h1> 
                     <h3><a href="?action=affichageListe">Afficher le catalogue de séries</a></h3><br>
                 <link rel="stylesheet" href="css/accueil.css" type="text/css" />
