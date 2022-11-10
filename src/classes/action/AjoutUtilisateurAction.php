@@ -5,11 +5,13 @@ namespace sae\web\action;
 use sae\web\authentification\Authentification;
 use sae\web\exception\EmailDejaExistantException;
 use sae\web\exception\MotDePasseTropCourtException;
+use sae\web\factory\ConnectionFactory;
 
 class AjoutUtilisateurAction extends Action
 {
     public function execute(): string
     {
+        Authentification::suppression();
         $html = "";
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
@@ -58,11 +60,28 @@ class AjoutUtilisateurAction extends Action
             } else {
                 try {
                     if (Authentification::register($email, $passwd)) {
-                        $html .= "<p>Veuillez valider votre compte</p>";
+                        $html .= <<<HTML
+                    <html>                       
+                        <h1>      
+                            <p>Veuillez valider votre compte</p>
+                        </h1> 
+                            <div class="div4">
+                                <div>
+                                    <h3>
+                                   
+                    HTML;
                         $token = uniqid();
                         $_SESSION['token'] = $token;
                         $expire = time() + 60;
-                        $html .= "<br><a href=" . "?action=activation&token=$token&email=$email&expire=$expire" . ">Activation</a>";
+                        $html .= <<<HTML
+                            <br><a href="?action=activation&token=$token&email=$email&expire=$expire" . ">Activation</a><br><br>
+
+                         <a href='index.php'>Retour a l'accueil</a>
+                                    </h3>
+                                </div>             
+                    </html>
+                    <link rel="stylesheet" href="css/connexion.css" type="text/css" />
+                    HTML;
                     } else   $html .= <<<HTML
                     <html>                       
                         <h1>      

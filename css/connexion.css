@@ -1,7 +1,6 @@
 body {
-    background: lightslategray;
+    background: #f3e3e2;
 }
-
 
 #container{
     width:500px;
@@ -30,7 +29,7 @@ input[type=text], input[type=password] {
 
 }
 input[type=submit] {
-    background-color: mediumseagreen;
+    background-color: #74112f;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -51,10 +50,14 @@ header{
 
 }
 h1 {
-   background: darkslategray;
+
+    background: #74112f;
     padding-bottom: 20px;
     text-align: center;
     border: 3px solid black;
+    color: #f3f3e2;
+
+
 }
 
 .wrapper {
@@ -79,13 +82,15 @@ h1 {
 
 h2{
     text-align: center;
-    background-color:  darkslategray;
+    background-color:  #74112f;
     border: 3px solid black;
+
+
 
 }
 h3{
     text-align: center;
-    background-color:  darkslategray;
+    background-color:  #74112f;
     border: 3px solid black;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -98,7 +103,10 @@ a {
     padding: 2px 1px 0;
 }
 
-a:link {
+a:read-only{
+    color: #f3f3e2;
+}
+a:hover{
     color: red;
 }
 

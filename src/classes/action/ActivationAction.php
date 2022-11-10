@@ -30,7 +30,6 @@ class ActivationAction extends Action
                     HTML;
                 }
             } else {
-                Authentification::suppression($_GET['email']);
                 $html .= <<<HTML
                     <html>                       
                         <h1>      
@@ -47,7 +46,6 @@ class ActivationAction extends Action
                     HTML;
             }
         } else {
-            Authentification::suppression($_GET['email']);
             $html .= <<<HTML
                     <html>                       
                         <h1>      
